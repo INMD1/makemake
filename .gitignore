@@ -3,3 +3,5 @@ node_modules
 *.json
 
 !Scret_templete.json
+
+build
