@@ -24,6 +24,7 @@ setTimeout(() => {console.log('json 분석결과 ' + count + '명을 발견했�
     });
     for (var i = 0; i < count; i++) {
     console.log('ID:'+ data[i].id + '하는중... ' + time);
+    if(data[i].body == '효민'){
       const page = await browser.newPage();
       await page.setViewport({
         width: 1366,
@@ -41,6 +42,22 @@ setTimeout(() => {console.log('json 분석결과 ' + count + '명을 발견했�
       await page.click("#i57");
       await page.click("#mG61Hd > div.freebirdFormviewerViewFormCard.exportFormCard > div > div.freebirdFormviewerViewNavigationNavControls > div.freebirdFormviewerViewNavigationButtonsAndProgress > div > div > span > span");  
       await page.close();
+    }else if(data[i].body == '행긱'){
+      const page = await browser.newPage();
+      await page.setViewport({
+        width: 1366,
+        height: 768
+      });
+      await page.goto('https://forms.gle/sFG3jmhLuJggxm887'),
+      await page.waitForNavigation( ),
+      await page.type("#mG61Hd > div.freebirdFormviewerViewFormCard.exportFormCard > div > div.freebirdFormviewerViewItemList > div:nth-child(1) > div > div > div.freebirdFormviewerComponentsQuestionTextRoot > div > div.quantumWizTextinputPaperinputMainContent.exportContent > div > div.quantumWizTextinputPaperinputInputArea > input", data[i].name),
+      await page.type("#mG61Hd > div.freebirdFormviewerViewFormCard.exportFormCard > div > div.freebirdFormviewerViewItemList > div:nth-child(2) > div > div > div.freebirdFormviewerComponentsQuestionTextRoot > div > div.quantumWizTextinputPaperinputMainContent.exportContent > div > div.quantumWizTextinputPaperinputInputArea > input", data[i].id),
+      await page.type("#mG61Hd > div.freebirdFormviewerViewFormCard.exportFormCard > div > div.freebirdFormviewerViewItemList > div:nth-child(2) > div > div > div.freebirdFormviewerComponentsQuestionTextRoot > div > div.quantumWizTextinputPaperinputMainContent.exportContent > div > div.quantumWizTextinputPaperinputInputArea > input", data[i].room),
+      await page.type("#mG61Hd > div.freebirdFormviewerViewFormCard.exportFormCard > div > div.freebirdFormviewerViewItemList > div:nth-child(2) > div > div > div.freebirdFormviewerComponentsQuestionTextRoot > div > div.quantumWizTextinputPaperinputMainContent.exportContent > div > div.quantumWizTextinputPaperinputInputArea > input", String(max +'.'+rand(0, 8))),
+      await page.click("#i21"),
+      // await page.click("#mG61Hd > div.freebirdFormviewerViewFormCard.exportFormCard > div > div.freebirdFormviewerViewNavigationNavControls > div.freebirdFormviewerViewNavigationButtonsAndProgress.hasClearButton > div.freebirdFormviewerViewNavigationLeftButtons > div > span > span"),
+      await page.close();
+    }
       console.log('ID:'+ data[i].id + ' 정상적으로 됨... ' + time);
     }
     await browser.close();
