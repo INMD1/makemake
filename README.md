@@ -7,8 +7,8 @@ node.js에서 puppeteer를 이용하여 자동화 구현
 1. 릴리즈에 있는 파일을 같은 폴더에 다운로드를 해주세요.
 2. 아래에 적어둔 설정 글을 보고 알맞게 설정을 해주시고 zip으로 되어 있는것은 파일이 있는 곳에 풀어주세요.
 3. 모든 준비를 했으면 screenshot이라고 폴더를 하나 만들어 주시고 exe를 돌리면 됨니다.<br><br>
-*screenshto 폴더에는 정보를 보내지 전에 이때까지 한 모습을 사진으로 저장합니다.
 
+screenshot 폴더에는 정보를 보내지 전에 이때까지 한 모습을 사진으로 저장합니다.
 <img src = "https://user-images.githubusercontent.com/87979171/131958280-f8bc96ed-ed5b-4c63-9b34-15e3b1bb2957.png" width="400px">
 
 # 설정
