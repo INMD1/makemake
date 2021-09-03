@@ -9,6 +9,7 @@ node.js에서 puppeteer를 이용하여 자동화 구현
 3. 모든 준비를 했으면 screenshot이라고 폴더를 하나 만들어 주시고 exe를 돌리면 됨니다.
 *screenshto 폴더에는 정보를 보내지 전에 이때까지 한 모습을 사진으로 저장합니다.
 
+<img src = "https://user-images.githubusercontent.com/87979171/131958280-f8bc96ed-ed5b-4c63-9b34-15e3b1bb2957.png" width="400px">
 
 # 설정
 이 프로그램을 이용하기 위해서는 먼저 Scret_templete.json이라는 걸 설정을 해야합니다.
