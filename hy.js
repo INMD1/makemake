@@ -62,7 +62,7 @@ console.log('json 분석결과 ' + count + '명을 발견했습니다. ' + momen
         return
       }
       console.log('[log] 성공적으로 저장됨. 파일이름:'+ data[i].id +'_'+ moment().format() +'.png');
-      //await page.click("#mG61Hd > div.freebirdFormviewerViewFormCard.exportFormCard > div > div.freebirdFormviewerViewNavigationNavControls > div.freebirdFormviewerViewNavigationButtonsAndProgress > div > div > span > span"); 
+      await page.click("#mG61Hd > div.freebirdFormviewerViewFormCard.exportFormCard > div > div.freebirdFormviewerViewNavigationNavControls > div.freebirdFormviewerViewNavigationButtonsAndProgress > div > div > span > span"); 
       console.log('[SUCCESS] ID:'+ data[i].id + ' 정상적으로 됨... ' + moment().format());
     }else{
       console.log('[Fail] ID:'+ data[i].id + ' 다른 기숙사입니다. ' + moment().format());
