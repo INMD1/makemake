@@ -5,15 +5,6 @@ const puppeteer = require('puppeteer');
 const isPkg = typeof process.pkg !== 'undefined';
 console.log('현재 프로그램 실행중인 OS: ' + process.platform)
 
-//check OSX
-let chromiumExecutablePath = (isPkg ?
-  puppeteer.executablePath().replace(
-    /^.*?\/node_modules\/puppeteer\/\.local-chromium/,
-    path.join(path.dirname(process.execPath), 'chromium')
-  ) :
-  puppeteer.executablePath()
-);
-
 //check win32
 if (process.platform == 'win32') {
   chromiumExecutablePath = (isPkg ?
