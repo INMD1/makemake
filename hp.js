@@ -54,18 +54,26 @@ console.log('json 분석결과 ' + count + '명을 발견했습니다. ' + time)
       await page.type("#mG61Hd > div.freebirdFormviewerViewFormCard.exportFormCard > div > div.freebirdFormviewerViewItemList > div:nth-child(3) > div > div > div.freebirdFormviewerComponentsQuestionTextRoot > div > div.quantumWizTextinputPaperinputMainContent.exportContent > div > div.quantumWizTextinputPaperinputInputArea > input", data[i].room),
       await page.type("#mG61Hd > div.freebirdFormviewerViewFormCard.exportFormCard > div > div.freebirdFormviewerViewItemList > div:nth-child(4) > div > div > div.freebirdFormviewerComponentsQuestionTextRoot > div > div.quantumWizTextinputPaperinputMainContent.exportContent > div > div.quantumWizTextinputPaperinputInputArea > input", String(max +'.'+rand(0, 8))),
       await page.click("#i21");
-      //await page.click("#mG61Hd > div.freebirdFormviewerViewFormCard.exportFormCard > div > div.freebirdFormviewerViewNavigationNavControls > div.freebirdFormviewerViewNavigationButtonsAndProgress > div > div > span");  
-      //await page.close();
-      console.log('[SUCCESS] ID:'+ data[i].id + ' 정상적으로 됨... ' + time);
+      try {
+        await page.screenshot({               
+          path: './screenshot/' + data[i].id +'_'+ moment().format("MM-DD-YYYY") +'.png',            
+          fullPage: true                      
+          });
+      } catch (error) {
+        console.log("오류가 발생했습니다 screenshot 파일이 제대로 있는지 확인을 해주십시오.");
+        console.log('종료할려면 아무키나 눌려주세요.');
+        return
+      }
+      console.log('[log] 성공적으로 저장됨. 파일이름:'+ data[i].id +'_'+ moment().format() +'.png');
+      await page.click("#mG61Hd > div.freebirdFormviewerViewFormCard.exportFormCard > div > div.freebirdFormviewerViewNavigationNavControls > div.freebirdFormviewerViewNavigationButtonsAndProgress > div > div > span > span"); 
+      console.log('[SUCCESS] ID:'+ data[i].id + ' 정상적으로 됨... ' + moment().format());
     }else{
-
-      }    
+      console.log('[Fail] ID:'+ data[i].id + ' 다른 기숙사입니다. ' + moment().format());
+    }
     }
     console.log('성공적으로 작업을 전부 완료 했습니다!');
     console.log('종료할려면 아무키나 눌려주세요.');
   })();
-
   process.stdin.setRawMode(true);
   process.stdin.resume();
   process.stdin.on('data', process.exit.bind(process, 0));
-
